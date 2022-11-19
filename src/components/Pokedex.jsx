@@ -56,7 +56,7 @@ const Pokedex = () => {
    return (
       <div>
          <h1>Pokedex</h1>
-         <p>Bienvenido {name}</p>
+         <p>Welcome {name}, here you can find your favorite pokemon... </p>
          <button onClick={() => setPage(page - 1)} disabled={page === 1}>
             Prev page
          </button>
@@ -85,7 +85,7 @@ const Pokedex = () => {
 
          <div>
             <select onChange={(e) => searchLocations(e.target.value)}>
-               <option value="">Selecciona una ubicación</option>
+               <option value="">Selecct a ubication</option>
                {locationsList.map((location) => (
                   <option value={location.url} key={location.url}>
                      {location.name}

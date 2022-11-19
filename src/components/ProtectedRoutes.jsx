@@ -8,7 +8,7 @@ const ProtectedRoutes = () => {
    // Importa es que valide si el usuario está loggeado o no
 
    //Agregar name antes de entregar el proyecto donde dice true
-   if (true) {
+   if (name) {
       return <Outlet />
    } else {
       return <Navigate to="/" />
