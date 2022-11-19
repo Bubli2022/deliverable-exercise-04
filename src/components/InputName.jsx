@@ -16,7 +16,7 @@ const InputName = () => {
 
    return (
       <div>
-         <h1>InputName</h1>
+         <h1>Input Your Name</h1>
          <input
             type="text"
             value={userName}

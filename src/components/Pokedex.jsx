@@ -85,7 +85,7 @@ const Pokedex = () => {
 
          <div>
             <select onChange={(e) => searchLocations(e.target.value)}>
-               <option value="">Selecct a ubication</option>
+               <option value="">Select a ubication</option>
                {locationsList.map((location) => (
                   <option value={location.url} key={location.url}>
                      {location.name}
