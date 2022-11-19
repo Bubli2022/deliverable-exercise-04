@@ -15,7 +15,7 @@ const Pokedex = () => {
 
    useEffect(() => {
       axios
-         .get("https://pokeapi.co/api/v2/pokemon/?offset=0&limit=500/")
+         .get("https://pokeapi.co/api/v2/pokemon/?offset=0&limit=100/")
          .then((res) => setPokedexList(res.data.results))
 
       axios
@@ -24,7 +24,7 @@ const Pokedex = () => {
    }, [])
 
    // console.log(pokedexList)
-   console.log(locationsList)
+   // console.log(locationsList)
 
    const searchName = () => {
       navigate(`/pokedex/${nameInput.toLowerCase()}`)
@@ -55,18 +55,19 @@ const Pokedex = () => {
 
    return (
       <div>
-         <h1>Pokedex</h1>
-         <p>Welcome {name}, here you can find your favorite pokemon... </p>
+         <div className="pokeball-background"></div>
+         <h2 className="title">Pokedex</h2>
+         <p className="title pokedex">
+            Welcome {name}, here you can find your favorite pokemon...{" "}
+         </p>
          <button onClick={() => setPage(page - 1)} disabled={page === 1}>
             Prev page
          </button>
-
          {pagesNumbers.map((number) => (
             <button key={number} onClick={() => setPage(number)}>
                {number}
             </button>
          ))}
-
          <button
             onClick={() => setPage(page + 1)}
             disabled={page === totalPages}
@@ -82,7 +83,6 @@ const Pokedex = () => {
             />
             <button onClick={searchName}>Search</button>
          </div>
-
          <div>
             <select onChange={(e) => searchLocations(e.target.value)}>
                <option value="">Select a ubication</option>
@@ -93,12 +93,13 @@ const Pokedex = () => {
                ))}
             </select>
          </div>
-
-         <ul className="container">
-            {pokedexPaginated?.map((pokedex) => (
-               <PokedexCard url={pokedex.url} key={pokedex.url} />
-            ))}
-         </ul>
+         <div className="row">
+            <ul className="container--card">
+               {pokedexPaginated?.map((pokedex) => (
+                  <PokedexCard url={pokedex.url} key={pokedex.url} />
+               ))}
+            </ul>
+         </div>{" "}
       </div>
    )
 }

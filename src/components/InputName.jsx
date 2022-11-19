@@ -15,16 +15,32 @@ const InputName = () => {
    }
 
    return (
-      <div>
-         <h1>Input Your Name</h1>
-         <input
-            type="text"
-            value={userName}
-            onChange={(e) => setUserName(e.target.value)}
-         />
-         <button onClick={dispatchUserName} className="btn">
-            Send
-         </button>
+      <div className="App">
+         <div>
+            <div className="beginning container">
+               <div className="pokeball-background"></div>
+
+               <div className="banner">
+                  <h2 className="title">Hello trainer!</h2>
+
+                  <img
+                     alt=""
+                     src="https://www.seekpng.com/png/full/201-2011786_red-by-xous-54-red-pokemon-trainer-png.png"
+                  />
+               </div>
+               <form>
+                  <p>Give me your name to start</p>
+                  <input
+                     type="text"
+                     value={userName}
+                     onChange={(e) => setUserName(e.target.value)}
+                  />
+                  <button onClick={dispatchUserName}>
+                     <i className="fas fa-paper-plane"></i>
+                  </button>
+               </form>
+            </div>
+         </div>
       </div>
    )
 }

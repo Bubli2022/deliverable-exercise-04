@@ -16,6 +16,7 @@ const PokedexDetail = () => {
 
    return (
       <div>
+         <div className="pokeball-background"></div>
          <h1>{pokedex.name}</h1>
          <img src={pokedex.sprites?.other.dream_world.front_default} alt="" />
          <p>
