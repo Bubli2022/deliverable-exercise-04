@@ -60,20 +60,27 @@ const Pokedex = () => {
          <p className="title pokedex">
             Welcome {name}, here you can find your favorite pokemon...{" "}
          </p>
-         <button onClick={() => setPage(page - 1)} disabled={page === 1}>
-            Prev page
-         </button>
-         {pagesNumbers.map((number) => (
-            <button key={number} onClick={() => setPage(number)}>
-               {number}
+         <div className="pagination">
+            <button onClick={() => setPage(page - 1)} disabled={page === 1}>
+               <i class="fa-solid fa-chevron-left"></i>
             </button>
-         ))}
-         <button
-            onClick={() => setPage(page + 1)}
-            disabled={page === totalPages}
-         >
-            Next page
-         </button>
+            {pagesNumbers.map((number) => (
+               <button
+                  key={number}
+                  onClick={() => setPage(number)}
+                  className="selected"
+               >
+                  {number}
+               </button>
+            ))}
+
+            <button
+               onClick={() => setPage(page + 1)}
+               disabled={page === totalPages}
+            >
+               <i class="fas fa-chevron-right"></i>
+            </button>
+         </div>
          <div>
             <input
                type="text"
