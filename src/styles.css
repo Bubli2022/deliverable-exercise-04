@@ -31,6 +31,7 @@
 .pokeball-background {
    animation: rotate 3s linear infinite;
    transform-origin: 50% 50%;
+   z-index: 100;
 }
 
 @keyframes rotate {
@@ -104,6 +105,10 @@ p.title.pokedex {
    text-align: left;
    padding: 10px 0 40px 30px;
    font-size: 1.1rem;
+}
+b {
+   position: relative;
+   right: -19px;
 }
 
 select {
@@ -187,9 +192,10 @@ button.selected {
    text-align: start;
    font-size: 30px;
 }
+
 .App {
    text-align: center;
-   padding: 70px;
+   padding: 2px;
    width: 100vw;
 }
 
@@ -199,11 +205,6 @@ button.selected {
    align-items: center;
 }
 
-/* .btn {
-   background-color: hsla(0, 0%, 100%, 0.4);
-   border-radius: 5px;
-   font-size: small;
-} */
 .information {
    display: flex;
    justify-content: space-around;
@@ -219,25 +220,6 @@ button.selected {
    width: 100%;
    padding: 10px;
 }
-
-/* .card {
-   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.474);
-   border-radius: 10px;
-   padding: 10px;
-   background-color: rgb(72, 208, 176);
-   height: 100%;
-   min-width: 260px;
-   max-width: 260px;
-   min-height: 260px;
-   max-height: 260px;
-   display: block;
-   display: flex;
-   align-items: center;
-   flex-direction: row;
-   justify-content: center;
-   text-shadow: 0 0 1.4px #000;
-   margin: 5px;
-} */
 
 .card {
    border-radius: 20px;
@@ -269,7 +251,7 @@ button.selected {
 
 .card img {
    width: 100%;
-   height: 80px;
+   height: 180px;
 }
 
 .card h3 {
@@ -312,7 +294,99 @@ button.selected {
    background: #67c98e;
 }
 
-@media (min-width: 400px) {
+/*----------------------pokedex Detail--------------------------*/
+.weigh-height-box {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-evenly;
+}
+
+.Detail--conteiner {
+   background: #48d0b0;
+   border-radius: 20px;
+   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.474);
+   width: 100%;
+}
+
+/*------ ui--segment ------*/
+
+.segment {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
+.types--grid {
+   margin: 2rem;
+   background: #48d0b0;
+   border-radius: 20px;
+   width: 100%;
+   height: 100%;
+   right: 27px;
+   position: relative;
+   box-shadow: 2px 2px 8px rgb(0 0 0 / 47%);
+   display: flex;
+   flex-direction: column;
+}
+
+.type--button {
+   margin: 1rem 15rem;
+   padding: 1rem;
+   background: #ff6f91;
+}
+
+/* stats segment */
+.stats {
+   background-color: #48d0b0;
+   text-align: center;
+   padding: 1rem;
+}
+
+.stats h2 {
+   margin-bottom: 1rem;
+}
+
+.stats .item2 {
+   display: flex;
+   margin-bottom: 2rem;
+   align-items: baseline;
+   position: relative;
+   right: 146px;
+}
+
+.stats .item2 div {
+   height: 2rem;
+}
+
+.stats .item2 .title {
+   display: flex;
+   justify-content: flex-end;
+   align-items: center;
+   width: 25%;
+   padding-right: 2rem;
+}
+
+.stats .item2 .title span {
+   background-color: #ddd;
+   border-radius: 20px;
+   padding: 4px;
+}
+
+.stats .item2 .bar {
+   background-color: #ddd;
+   width: 75%;
+}
+
+.stats .item2 .bar .progress {
+   background-color: #ff6f91;
+   color: white;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+@media (min-width: 300px) {
    .card .text {
       font-size: 1rem;
    }
@@ -328,11 +402,39 @@ button.selected {
       height: 40%;
       width: 150%;
    }
+   .Detail--conteiner {
+      max-width: 500px;
+   }
+   .types--grid {
+      max-width: 500px;
+   }
+
+   .pokedex--detail {
+      position: relative;
+      right: 0px;
+      margin: 5rem 8rem;
+   }
+
+   .type--button {
+      margin: 1rem 3rem;
+      padding: 1rem;
+      background: #ff6f91;
+   }
 }
 
 @media (min-width: 558px) {
    .item {
       width: 50%;
+   }
+   .Detail--conteiner {
+      max-width: 500px;
+   }
+   .types--grid {
+      max-width: 500px;
+   }
+   .pokedex--detail {
+      position: relative;
+      right: -19px;
    }
 }
 
@@ -352,18 +454,21 @@ button.selected {
    .container {
       max-width: 579px;
    }
-   /* .row {
-      display: flex;
-      flex-wrap: wrap;
-   } */
 
    .cloud {
       margin-bottom: 3px;
    }
-   /* 
-   .col-sm-2 {
-      width: 50%;
-   } */
+
+   .Detail--conteiner {
+      max-width: 500px;
+   }
+   .types--grid {
+      max-width: 500px;
+   }
+   .pokedex--detail {
+      position: relative;
+      right: -33px;
+   }
 }
 
 @media (min-width: 768px) {
@@ -374,8 +479,8 @@ button.selected {
    .pokeball-background {
       right: -90px;
       top: -50px;
-      height: 400px;
-      width: 400px;
+      height: 600px;
+      width: 600px;
    }
 
    .container {
@@ -384,8 +489,24 @@ button.selected {
    .pokeball-background {
       right: -90px;
       top: -50px;
-      height: 400px;
-      width: 400px;
+      height: 500px;
+      width: 500px;
+   }
+   .Detail--conteiner {
+      max-width: 900px;
+   }
+   .types--grid {
+      max-width: 900px;
+   }
+   .pokedex--detail {
+      position: relative;
+      right: 10px;
+   }
+
+   .type--button {
+      margin: 1rem 10rem;
+      padding: 1rem;
+      background: #ff6f91;
    }
 }
 
@@ -406,11 +527,30 @@ button.selected {
       height: 500px;
       width: 500px;
    }
-   /* .settings {
-      height: 55px;
-      width: 55px;
+   .App {
+      text-align: center;
+      padding: 2px;
+      width: 100vw;
+      position: relative;
+      right: 0px;
    }
-   .settings i {
-      font-size: 2rem;
-   } */
+   .pokedex--detail {
+      position: relative;
+      right: -240px;
+   }
+   .type--button {
+      margin: 1rem 15rem;
+      padding: 1rem;
+      background: #ff6f91;
+   }
+}
+
+@media (min-width: 2000px) {
+   .App {
+      text-align: center;
+      padding: 2px;
+      width: 100vw;
+      position: relative;
+      right: -609px;
+   }
 }

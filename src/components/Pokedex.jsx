@@ -62,7 +62,7 @@ const Pokedex = () => {
          </p>
          <div className="pagination">
             <button onClick={() => setPage(page - 1)} disabled={page === 1}>
-               <i class="fa-solid fa-chevron-left"></i>
+               <i className="fa-solid fa-chevron-left"></i>
             </button>
             {pagesNumbers.map((number) => (
                <button
@@ -78,7 +78,7 @@ const Pokedex = () => {
                onClick={() => setPage(page + 1)}
                disabled={page === totalPages}
             >
-               <i class="fas fa-chevron-right"></i>
+               <i className="fas fa-chevron-right"></i>
             </button>
          </div>
          <div>
